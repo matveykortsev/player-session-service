@@ -5,13 +5,12 @@ from marshmallow import Schema, fields
 
 
 class Transaction:
-    def __init__(self, event, country, player_id, type):
+    def __init__(self, event, player_id, country=None):
         self.event = event
         self.country = country
         self.player_id = player_id
         self.session_id = uuid4()
         self.ts = dt.datetime.now()
-        self.type = type
 
 
 class TransactionSchema(Schema):
@@ -19,6 +18,5 @@ class TransactionSchema(Schema):
     country = fields.Str()
     player_id = fields.Str()
     session_id = fields.UUID()
-    ts = fields.Date()
-    type = fields.Str()
+    ts = fields.DateTime()
 

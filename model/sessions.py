@@ -5,13 +5,13 @@ from .transaction_type import TransactionType
 
 
 class Sessions(Transaction):
-    def __init__(self, event, country, player_id):
-        super(Sessions, self).__init__(event, country, player_id, TransactionType.SESSIONS)
+    def __init__(self, event, player_id, country=None):
+        super(Sessions, self).__init__(event, player_id, country)
 
 
 class SessionsSchema(TransactionSchema):
     @post_load
-    def parse_sessions(self, data):
+    def parse_sessions(self, data, **kwargs):
         return Sessions(**data)
 
 
