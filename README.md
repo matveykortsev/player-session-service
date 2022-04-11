@@ -116,9 +116,7 @@ Also using prepared Cassandra queries for more efficient query.
 
 ## Things to do
 
+* Add Redis caching for batches
 * Improve exception handling
-* Improve rest input validation
-* Add more robust data quality validation
-* Timestamp handling with full event precision
-* Add unit- and integration -tests to get proper test coverage
-* Performance testing with real Cassandra cluster
+* Add more data quality validation
+* Improve data model for more efficient query
