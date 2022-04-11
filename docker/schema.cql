@@ -1,0 +1,2 @@
+CREATE TABLE test.session_by_country (player_id text,ts timestamp,country text,event text,session_id uuid, PRIMARY KEY (country, ts)) WITH CLUSTERING ORDER BY (ts DESC) AND default_time_to_live=31557600;
+CREATE TABLE test.session_by_player_id (player_id text,ts timestamp,country text,event text,session_id uuid,PRIMARY KEY (player_id, ts)) WITH CLUSTERING ORDER BY (ts DESC) AND default_time_to_live = 31557600;
